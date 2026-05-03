@@ -31,33 +31,6 @@
     background: var(--cream);
     color: var(--ink);
     overflow-x: hidden;
-    cursor: none;
-  }
-
-  /* ═══ CURSOR ═══ */
-  .cursor {
-    position: fixed; top: 0; left: 0; z-index: 9999;
-    pointer-events: none;
-  }
-  .cursor-dot {
-    width: 8px; height: 8px;
-    background: var(--sage-d);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: transform .1s;
-  }
-  .cursor-ring {
-    width: 36px; height: 36px;
-    border: 1.5px solid var(--sage);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: transform .18s ease, width .25s, height .25s, border-color .25s;
-    opacity: .7;
-  }
-  body:has(a:hover) .cursor-ring,
-  body:has(button:hover) .cursor-ring {
-    width: 56px; height: 56px;
-    border-color: var(--warm);
   }
 
   /* ═══ NOISE OVERLAY ═══ */
@@ -980,18 +953,11 @@
     section { padding: 72px 0; }
     .container { padding: 0 20px; }
     .tg-sticky { bottom: 20px; right: 20px; width: 52px; height: 52px; }
-    body { cursor: auto; }
-    .cursor { display: none; }
   }
 </style>
 </head>
 <body>
 
-<!-- CURSOR -->
-<div class="cursor" id="cursor">
-  <div class="cursor-ring" id="cursorRing"></div>
-  <div class="cursor-dot" id="cursorDot"></div>
-</div>
 
 <!-- NAV -->
 <nav id="nav">
@@ -1532,18 +1498,6 @@
 </a>
 
 <script>
-  // ── CURSOR ──
-  const dot  = document.getElementById('cursorDot');
-  const ring = document.getElementById('cursorRing');
-  let mx = 0, my = 0, rx = 0, ry = 0;
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-  function animCursor() {
-    dot.style.left = mx + 'px'; dot.style.top = my + 'px';
-    rx += (mx - rx) * .12; ry += (my - ry) * .12;
-    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-    requestAnimationFrame(animCursor);
-  }
-  animCursor();
 
   // ── NAV SCROLL ──
   const nav = document.getElementById('nav');
