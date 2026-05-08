@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -507,7 +506,7 @@
 
   /* === REVIEWS === */
   #reviews {
-    padding: 70px 0; overflow: hidden;
+    padding: 70px 0;
     background: rgba(10,12,18,0.6);
     border-top: 1px solid rgba(37,96,232,0.12);
     border-bottom: 1px solid rgba(37,96,232,0.12);
@@ -521,33 +520,6 @@
     color: #4ade80; letter-spacing: 0.1em; text-transform: uppercase;
   }
   .live-dot { width: 7px; height: 7px; background: #4ade80; border-radius: 50%; animation: pulse-green 1.5s ease-in-out infinite; }
-  .review-stream { position: relative; height: 420px; overflow: hidden; }
-  .review-stream::before,
-  .review-stream::after {
-    content: ''; position: absolute; left: 0; right: 0; height: 90px; z-index: 2; pointer-events: none;
-  }
-  .review-stream::before { top: 0; background: linear-gradient(to bottom,rgba(10,12,18,0.98),transparent); }
-  .review-stream::after  { bottom: 0; background: linear-gradient(to top,rgba(10,12,18,0.98),transparent); }
-  .review-feed { display: flex; flex-direction: column; gap: 12px; animation: scroll-up var(--scroll-duration,50s) linear infinite; }
-  @keyframes scroll-up { 0%{transform:translateY(0)} 100%{transform:translateY(-50%)} }
-  .review-card {
-    background: linear-gradient(135deg,rgba(42,45,53,0.85),rgba(26,29,35,0.95));
-    border: 1px solid rgba(37,96,232,0.18); border-radius: 12px;
-    padding: 16px 20px; display: flex; gap: 14px;
-    align-items: flex-start; position: relative; overflow: hidden; flex-shrink: 0;
-  }
-  .review-card::before {
-    content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%;
-    background: linear-gradient(to bottom,var(--blue-glow),var(--yellow));
-    border-radius: 3px 0 0 3px;
-  }
-  .review-avatar { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; font-weight: 900; }
-  .review-body { flex: 1; min-width: 0; }
-  .review-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; flex-wrap: wrap; }
-  .review-author { font-weight: 700; font-size: 0.85rem; color: var(--white); }
-  .review-stars { color: var(--yellow); font-size: 0.72rem; letter-spacing: 1px; }
-  .review-time { font-family: 'Share Tech Mono', monospace; font-size: 0.67rem; color: var(--text-dim); margin-left: auto; }
-  .review-text { font-size: 0.87rem; color: var(--text-dim); line-height: 1.55; }
 
   /* === INFO STRIP === */
   .info-strip {
@@ -791,7 +763,6 @@
     .info-grid { grid-template-columns: 1fr; gap: 16px; }
     .contact-wrap { grid-template-columns: 1fr; gap: 24px; }
     .order-wrap { grid-template-columns: 1fr; gap: 28px; }
-    .review-stream { height: 340px; }
     section { padding: 60px 0; }
     .services-grid { grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); }
     .price-grid { grid-template-columns: 1fr; }
@@ -813,7 +784,6 @@
     .phone-frame, .badge-1, .badge-2, .badge-3 { animation: none; }
     .orbit-ring { animation: none; }
     .nav-logo .gear-icon { animation: none; }
-    .review-feed { animation: none; }
   }
 </style>
 </head>
@@ -890,7 +860,7 @@
     TG
   </button>
   <a href="viber://chat?number=%2B380660052325" class="sticky-cta-btn sticky-cta-viber">
-    <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M11.985.015C8.89-.09 2.812 1.025 .87 6.651c-.826 2.369-.915 5.452-.51 9.143 0 0 .51 5.547 5.879 6.994l.007 3.197 3.59-3.59s5.41.469 8.7-1.63c2.852-1.855 3.987-5.688 4.107-9.342.12-3.655-.553-8.024-2.955-10.015C18.197.966 15.076.12 11.985.015zm-.1 1.868c2.793.019 5.398.716 6.855 2.012 1.914 1.665 2.603 5.553 2.502 9.013-.094 3.126-.985 6.432-3.302 7.956-2.645 1.718-7.397 1.39-7.397 1.39L8.1 24.04l-.007-2.607S3.46 20.4 3.004 16.03c-.376-3.58-.278-6.4.406-8.472 1.629-4.677 6.614-5.69 8.475-5.675zm.068 2.41c-.3.003-.608.029-.922.08C8.8 4.684 7.135 5.89 6.576 8.036c-.436 1.654-.2 3.794.475 4.95.67 1.155 2.003 2.41 3.338 2.792.453.13.98.19 1.55.19.834 0 1.746-.182 2.525-.593 1.41-.742 2.42-2.09 2.676-3.618.22-1.306.1-2.797-.51-4.018-.55-1.095-1.638-2.256-3.067-3.077-.556-.32-1.152-.487-1.51-.489zm-.16 1.527c.255.012.55.117.889.31.913.527 1.82 1.474 2.266 2.34.49.975.584 2.225.393 3.295-.19 1.124-.922 2.117-1.93 2.653-.67.351-1.48.5-2.224.43-.422-.04-.817-.148-1.1-.231-.88-.252-1.855-1.116-2.342-1.962-.5-.862-.698-2.633-.37-3.837.406-1.548 1.638-2.413 3.157-2.643a4.3 4.3 0 0 1 1.261-.355zm-.097 1.44c-.327.02-.658.1-.98.238-.808.348-1.484 1.108-1.694 1.914-.24.914-.032 2.423.27 2.967.352.624 1.107 1.287 1.73 1.47.204.059.5.15.84.15.589 0 1.226-.18 1.72-.451.72-.38 1.248-1.09 1.384-1.874.13-.783.033-1.766-.266-2.39-.332-.662-1.063-1.419-1.907-1.85a2.46 2.46 0 0 0-1.097-.174zm1.638 1.645c.157.01.3.07.43.164.133.096.17.293.08.437-.094.145-.285.183-.43.089a.52.52 0 0 0-.144-.065c-.058-.015-.116-.017-.17-.005-.11.023-.212.094-.266.22-.054.122-.058.29.032.411.182.245.554.23.745.028.076-.081.126-.196.102-.312-.025-.117-.124-.199-.24-.199a.31.31 0 0 0-.081.013c-.082.025-.152.083-.17.17a.153.153 0 0 0 .136.187l.031.001c.03 0 .06-.008.087-.024.034-.021.048-.063.032-.1a.094.094 0 0 0-.12-.046.108.108 0 0 0-.029.016"/></svg>
+    <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M11.985.015C8.89-.09 2.812 1.025 .87 6.651c-.826 2.369-.915 5.452-.51 9.143 0 0 .51 5.547 5.879 6.994l.007 3.197 3.59-3.59s5.41.469 8.7-1.63c2.852-1.855 3.987-5.688 4.107-9.342.12-3.655-.553-8.024-2.955-10.015C18.197.966 15.076.12 11.985.015z"/></svg>
     Viber
   </a>
 </div>
@@ -1222,11 +1192,11 @@
         <div class="section-label" style="margin-bottom: 6px;">відгуки клієнтів</div>
         <h2 class="section-title" style="margin-bottom: 0;">Що кажуть <span>клієнти</span></h2>
       </div>
-      <div class="live-badge"><div class="live-dot"></div>live</div>
+      <div class="live-badge"><div class="live-dot"></div>Google Reviews</div>
     </div>
-    <div class="review-stream">
-      <div class="review-feed" id="reviewFeed"></div>
-    </div>
+    <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <div class="elfsight-app-5ffb8a6e-e10a-4f7e-b4f6-d0af54a816f9" data-elfsight-app-lazy></div>
   </div>
 </section>
 
@@ -1251,7 +1221,6 @@
     <div class="section-label">онлайн замовлення</div>
     <h2 class="section-title reveal">Залишити <span>заявку</span></h2>
     <div class="order-wrap">
-      <!-- Left: перваги форми -->
       <div class="order-info reveal">
         <p style="color:var(--text-dim);line-height:1.7;margin-bottom:10px;">
           Не хочете телефонувати? Заповніть форму — ми зателефонуємо вам самі та узгодимо зручний час.
@@ -1276,7 +1245,6 @@
         </div>
       </div>
 
-      <!-- Right: форма -->
       <div class="order-form-box reveal">
         <div class="form-title">Заявка на <span>ремонт</span></div>
         <div id="orderFormInner">
@@ -1328,7 +1296,6 @@
           <div class="form-note">Натискаючи кнопку, ви погоджуєтесь на зворотній дзвінок від нашого майстра</div>
         </div>
 
-        <!-- Success state -->
         <div class="form-success" id="formSuccess">
           <div class="success-icon">✅</div>
           <div class="success-title">Заявку отримано!</div>
@@ -1396,7 +1363,6 @@
       </div>
 
       <div class="contact-cta-block reveal">
-        <!-- Phone -->
         <a href="tel:0660052325" class="big-cta-btn big-cta-phone">
           <div class="big-cta-icon big-cta-icon-phone">📞</div>
           <div class="big-cta-text">
@@ -1404,7 +1370,6 @@
             <div class="main yellow">066 005 2325</div>
           </div>
         </a>
-        <!-- Telegram -->
         <button class="big-cta-btn big-cta-tg" onclick="openTelegram()">
           <div class="big-cta-icon big-cta-icon-tg">
             <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 14.26l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.836.326z"/></svg>
@@ -1414,7 +1379,6 @@
             <div class="main tg-color">Написати в Telegram →</div>
           </div>
         </button>
-        <!-- Viber -->
         <a href="viber://chat?number=%2B380660052325" class="big-cta-btn big-cta-viber">
           <div class="big-cta-icon big-cta-icon-viber">
             <svg viewBox="0 0 24 24" fill="white"><path d="M11.985.015C8.89-.09 2.812 1.025.87 6.651c-.826 2.369-.915 5.452-.51 9.143 0 0 .51 5.547 5.879 6.994l.007 3.197 3.59-3.59s5.41.469 8.7-1.63c2.852-1.855 3.987-5.688 4.107-9.342.12-3.655-.553-8.024-2.955-10.015C18.197.966 15.076.12 11.985.015zm-.1 1.868c2.793.019 5.398.716 6.855 2.012 1.914 1.665 2.603 5.553 2.502 9.013-.094 3.126-.985 6.432-3.302 7.956-2.645 1.718-7.397 1.39-7.397 1.39L8.1 24.04l-.007-2.607S3.46 20.4 3.004 16.03c-.376-3.58-.278-6.4.406-8.472 1.629-4.677 6.614-5.69 8.475-5.675zm.068 2.41c-.3.003-.608.029-.922.08C8.8 4.684 7.135 5.89 6.576 8.036c-.436 1.654-.2 3.794.475 4.95.67 1.155 2.003 2.41 3.338 2.792.453.13.98.19 1.55.19.834 0 1.746-.182 2.525-.593 1.41-.742 2.42-2.09 2.676-3.618.22-1.306.1-2.797-.51-4.018-.55-1.095-1.638-2.256-3.067-3.077-.556-.32-1.152-.487-1.51-.489z"/></svg>
@@ -1424,7 +1388,6 @@
             <div class="main viber-color">Написати у Viber →</div>
           </div>
         </a>
-        <!-- Maps -->
         <a href="https://www.google.com/maps/dir/?api=1&destination=вул.+Медична+1%2F11%2C+Кам%27янське" target="_blank" class="big-cta-btn big-cta-maps">
           <div class="big-cta-icon big-cta-icon-maps">
             <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
@@ -1549,9 +1512,6 @@ function submitForm() {
   if (!device) { alert('Будь ласка, оберіть тип пристрою'); document.getElementById('fdevice').focus(); return; }
   if (!problem) { alert('Будь ласка, оберіть тип несправності'); document.getElementById('fproblem').focus(); return; }
 
-  // Тут можна підключити відправку на бекенд або через Telegram Bot API
-  // fetch('/api/order', { method:'POST', body: JSON.stringify({ name, phone, device, problem }) })
-
   document.getElementById('successName').textContent = name;
   document.getElementById('successPhone').textContent = phone;
   document.getElementById('orderFormInner').style.display = 'none';
@@ -1582,68 +1542,13 @@ function buildTicker() {
   doubled.forEach(item => {
     const el = document.createElement('span');
     el.className = 'ticker-item';
-    el.innerHTML = `<span class="status-dot"></span><span class="brand">${item.brand}</span><span>—</span><span class="op">${item.op}</span><span>${item.status}</span><span class="ticker-sep">◆</span>`;
+    el.innerHTML = '<span class="status-dot"></span><span class="brand">' + item.brand + '</span><span>—</span><span class="op">' + item.op + '</span><span>' + item.status + '</span><span class="ticker-sep">◆</span>';
     track.appendChild(el);
   });
   const totalWidth = track.scrollWidth / 2;
   track.style.animationDuration = (totalWidth / 80) + 's';
 }
 buildTicker();
-
-// === REVIEWS ===
-const reviews = [
-  { text: 'Звернувся через розбитий екран — зробили швидко і акуратно. Телефон як новий 👍', name: 'Олег К.', stars: 5, emoji: '😊' },
-  { text: 'Не працював динамік, вже думав міняти телефон. Тут все вирішили за кілька годин.', name: 'Марина В.', stars: 5, emoji: '😮' },
-  { text: 'Дуже адекватний сервіс, пояснили причину поломки і не навʼязували зайвого.', name: 'Ігор Т.', stars: 5, emoji: '🤝' },
-  { text: 'Міняли батарею — тепер тримає цілий день без проблем. Дякую!', name: 'Наталя Р.', stars: 5, emoji: '🔋' },
-  { text: 'Все чітко і по справі. Приніс — сказали ціну — зробили без сюрпризів.', name: 'Андрій М.', stars: 5, emoji: '✅' },
-  { text: 'Після води телефон майже не подавав ознак життя, але тут його врятували 🙏', name: 'Тетяна С.', stars: 5, emoji: '💧' },
-  { text: 'Приємне обслуговування, видно що люди знають свою справу.', name: 'Василь Д.', stars: 5, emoji: '👨‍🔧' },
-  { text: 'Заміна скла пройшла ідеально, навіть не скажеш що був ремонт.', name: 'Оксана Ф.', stars: 5, emoji: '📱' },
-  { text: 'Зробили швидше ніж обіцяли, за це окремий плюс.', name: 'Дмитро Л.', stars: 5, emoji: '⚡' },
-  { text: 'Ціни нормальні, якість топ. Рекомендую.', name: 'Катерина П.', stars: 5, emoji: '⭐' },
-  { text: 'Проблема з зарядкою — вирішили за один день. Все працює ідеально.', name: 'Сергій Н.', stars: 5, emoji: '🔌' },
-  { text: 'Дякую майстру за чесність, сказав що міняти не треба — просто почистив.', name: 'Людмила Ж.', stars: 5, emoji: '🙏' },
-  { text: 'Звертаюсь не перший раз, як завжди все на рівні.', name: 'Роман Б.', stars: 5, emoji: '🔁' },
-  { text: 'Дуже швидко і без зайвих питань. Приніс телефон — забрав вже готовий.', name: 'Аліна В.', stars: 5, emoji: '🏃' },
-  { text: 'Якісний ремонт і гарантія — це важливо. Тут все є.', name: 'Микола З.', stars: 5, emoji: '🛡' },
-  { text: 'Телефон почав сильно грітись, виправили проблему без заміни дорогих деталей.', name: 'Ірина К.', stars: 5, emoji: '🌡' },
-  { text: 'Все пояснили простими словами, навіть для тих хто не розбирається.', name: 'Павло Г.', stars: 5, emoji: '💬' },
-  { text: 'Хороший сервіс, приємні люди і адекватні ціни.', name: 'Юлія Х.', stars: 5, emoji: '😄' },
-  { text: 'Реально врятували мій телефон, вже думав що все, кінець.', name: 'Євген А.', stars: 5, emoji: '🎉' },
-  { text: 'Швидко, якісно і без обману. Саме те, що шукав.', name: 'Вікторія М.', stars: 5, emoji: '💯' },
-];
-const avatarColors = [
-  ['#1a4fc4','#3d7fff'],['#7c3aed','#a855f7'],['#0f766e','#14b8a6'],
-  ['#b45309','#f59e0b'],['#be123c','#f43f5e'],['#1d4ed8','#60a5fa'],
-];
-const timeLabels = ['щойно','1 хв тому','2 хв тому','3 хв тому','5 хв тому','7 хв тому','10 хв тому','15 хв тому','20 хв тому','25 хв тому'];
-function makeCard(review, timeIdx) {
-  const c = avatarColors[Math.floor(Math.random() * avatarColors.length)];
-  const stars = '★'.repeat(review.stars) + '☆'.repeat(5 - review.stars);
-  const time = timeLabels[Math.min(timeIdx, timeLabels.length - 1)];
-  const card = document.createElement('div');
-  card.className = 'review-card';
-  card.innerHTML = `
-    <div class="review-avatar" style="background:linear-gradient(135deg,${c[0]},${c[1]});color:#fff;">${review.emoji}</div>
-    <div class="review-body">
-      <div class="review-meta">
-        <span class="review-author">${review.name}</span>
-        <span class="review-stars">${stars}</span>
-        <span class="review-time">${time}</span>
-      </div>
-      <div class="review-text">${review.text}</div>
-    </div>`;
-  return card;
-}
-function buildReviews() {
-  const feed = document.getElementById('reviewFeed');
-  const shuffled = [...reviews].sort(() => Math.random() - 0.5);
-  const all = [...shuffled, ...shuffled];
-  all.forEach((r, i) => feed.appendChild(makeCard(r, i % reviews.length)));
-  feed.style.animationDuration = (all.length * 3.2) + 's';
-}
-buildReviews();
 
 // === PWA Service Worker ===
 if ('serviceWorker' in navigator) {
