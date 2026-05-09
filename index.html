@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -492,6 +491,33 @@
   }
   .price-note { text-align: center; margin-top: 20px; font-size: 0.8rem; color: var(--text-dim); font-family: 'Share Tech Mono', monospace; letter-spacing: 0.08em; }
   .price-note span { color: var(--blue-glow); }
+
+  /* FREE banner */
+  .price-free-banner {
+    display: flex; align-items: center; gap: 18px;
+    background: linear-gradient(135deg, rgba(74,222,128,0.1), rgba(26,79,196,0.12));
+    border: 1px solid rgba(74,222,128,0.35); border-radius: 14px;
+    padding: 18px 24px; margin-bottom: 22px; position: relative; overflow: hidden;
+  }
+  .price-free-banner::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(74,222,128,0.04), transparent);
+    pointer-events: none;
+  }
+  .price-free-icon { font-size: 2rem; flex-shrink: 0; }
+  .price-free-title { font-weight: 900; font-size: 1.05rem; color: #4ade80; margin-bottom: 3px; }
+  .price-free-sub { font-size: 0.8rem; color: var(--text-dim); }
+  .price-free-badge {
+    margin-left: auto; flex-shrink: 0;
+    background: #4ade80; color: #0a1a10;
+    font-family: 'Share Tech Mono', monospace; font-weight: 900; font-size: 0.85rem;
+    letter-spacing: 0.12em; padding: 6px 14px; border-radius: 6px;
+    box-shadow: 0 0 16px rgba(74,222,128,0.4);
+  }
+  @media(max-width: 480px) {
+    .price-free-banner { flex-wrap: wrap; gap: 12px; }
+    .price-free-badge { margin-left: 0; }
+  }
 
   /* === BRANDS === */
   #brands { background: rgba(26,79,196,0.04); border-top: 1px solid rgba(37,96,232,0.1); border-bottom: 1px solid rgba(37,96,232,0.1); }
@@ -1077,42 +1103,60 @@
   <div class="container">
     <div class="section-label">вартість ремонту</div>
     <h2 class="section-title reveal">Орієнтовний <span>прайс</span></h2>
+    <!-- FREE CONSULTATION BANNER -->
+    <div class="price-free-banner reveal">
+      <span class="price-free-icon">🎯</span>
+      <div>
+        <div class="price-free-title">Консультація — безкоштовно</div>
+        <div class="price-free-sub">Приходьте або телефонуйте — оцінимо без жодних зобовʼязань</div>
+      </div>
+      <span class="price-free-badge">FREE</span>
+    </div>
+
     <div class="price-grid">
       <div class="price-card reveal">
-        <div class="price-service"><div class="price-icon">📱</div><div><div class="price-name">Заміна дисплея</div><div class="price-brand">iPhone / Samsung / Xiaomi</div></div></div>
-        <div class="price-amount">від 800+ грн</div>
+        <div class="price-service"><div class="price-icon">🛍️</div><div><div class="price-name">Аксесуари</div><div class="price-brand">Чохли, кабелі, зарядки та ін.</div></div></div>
+        <div class="price-amount">150+ грн</div>
       </div>
       <div class="price-card reveal">
-        <div class="price-service"><div class="price-icon">🔋</div><div><div class="price-name">Заміна акумулятора</div><div class="price-brand">Будь-який смартфон</div></div></div>
-        <div class="price-amount">від 400+ грн</div>
+        <div class="price-service"><div class="price-icon">🛡️</div><div><div class="price-name">Захисне скло</div><div class="price-brand">Для будь-якої моделі</div></div></div>
+        <div class="price-amount">250+ грн</div>
       </div>
       <div class="price-card reveal">
-        <div class="price-service"><div class="price-icon">🔌</div><div><div class="price-name">Ремонт роз'єму зарядки</div><div class="price-brand">USB-C / Lightning / micro</div></div></div>
-        <div class="price-amount">від 300+ грн</div>
+        <div class="price-service"><div class="price-icon">🧹</div><div><div class="price-name">Чистка комплексна</div><div class="price-brand">Повне очищення пристрою</div></div></div>
+        <div class="price-amount">200 грн</div>
       </div>
       <div class="price-card reveal">
-        <div class="price-service"><div class="price-icon">📷</div><div><div class="price-name">Заміна камери</div><div class="price-brand">Фронтальна / основна</div></div></div>
-        <div class="price-amount">від 500+ грн</div>
+        <div class="price-service"><div class="price-icon">🔌</div><div><div class="price-name">Роз'єм зарядки</div><div class="price-brand">USB-C / Lightning / micro-USB</div></div></div>
+        <div class="price-amount">500+ грн</div>
       </div>
       <div class="price-card reveal">
-        <div class="price-service"><div class="price-icon">🔊</div><div><div class="price-name">Ремонт динаміка / мікрофона</div><div class="price-brand">Будь-яка модель</div></div></div>
-        <div class="price-amount">від 250+ грн</div>
+        <div class="price-service"><div class="price-icon">🎙️</div><div><div class="price-name">Мікрофон / динамік</div><div class="price-brand">Будь-яка модель смартфона</div></div></div>
+        <div class="price-amount">450+ грн</div>
       </div>
       <div class="price-card reveal">
-        <div class="price-service"><div class="price-icon">💧</div><div><div class="price-name">Після влучення рідини</div><div class="price-brand">Чищення + діагностика</div></div></div>
-        <div class="price-amount">від 350+ грн</div>
+        <div class="price-service"><div class="price-icon">📱</div><div><div class="price-name">Заміна скла дисплею</div><div class="price-brand">Зі збереженням матриці</div></div></div>
+        <div class="price-amount">800+ грн</div>
       </div>
       <div class="price-card reveal">
-        <div class="price-service"><div class="price-icon">💻</div><div><div class="price-name">Ремонт ноутбука</div><div class="price-brand">Екран / клавіатура / SSD</div></div></div>
-        <div class="price-amount">від 600+ грн</div>
+        <div class="price-service"><div class="price-icon">🖥️</div><div><div class="price-name">Зміна дисплею</div><div class="price-brand">iPhone / Samsung / Xiaomi</div></div></div>
+        <div class="price-amount">700+ грн</div>
       </div>
       <div class="price-card reveal">
-        <div class="price-service"><div class="price-icon">🔍</div><div><div class="price-name">Діагностика</div><div class="price-brand">При будь-якому ремонті</div></div></div>
-        <div class="price-amount">БЕЗКОШТОВНО</div>
+        <div class="price-service"><div class="price-icon">📟</div><div><div class="price-name">Ремонт планшетів</div><div class="price-brand">iPad / Samsung Tab та інші</div></div></div>
+        <div class="price-amount">700+ грн</div>
+      </div>
+      <div class="price-card reveal">
+        <div class="price-service"><div class="price-icon">💻</div><div><div class="price-name">Чистка ноутбука / PlayStation</div><div class="price-brand">Від пилу, термопаста</div></div></div>
+        <div class="price-amount">800+ грн</div>
+      </div>
+      <div class="price-card reveal">
+        <div class="price-service"><div class="price-icon">🎧</div><div><div class="price-name">Чистка навушників</div><div class="price-brand">AirPods / TWS / дротові</div></div></div>
+        <div class="price-amount">300 грн</div>
       </div>
     </div>
     <div class="price-note">
-      <span>※</span> Точна ціна визначається після діагностики. Ціни вказані орієнтовно. Телефонуйте — уточнимо вартість безкоштовно.
+      <span>※</span> Точна ціна визначається після діагностики. Ціни орієнтовні. Телефонуйте — уточнимо вартість безкоштовно.
     </div>
   </div>
 </section>
